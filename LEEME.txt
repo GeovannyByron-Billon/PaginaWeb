@@ -1,0 +1,12 @@
+PAGINA WEB LISTA PARA GITHUB PAGES
+
+Contenido: index.html es la pagina principal. tarjeta-digital.html es la tarjeta de presentacion. Las carpetas css, js y assets contienen los archivos que ambas necesitan.
+
+PUBLICARLA
+1. Descomprime github-pages-ready.zip.
+2. En GitHub, abre el repositorio donde publicaras la web.
+3. Sube el contenido de esta carpeta (index.html, tarjeta-digital.html y las carpetas css, js y assets) a la raiz del repositorio.
+4. En el repositorio, abre Settings > Pages y selecciona Deploy from a branch, la rama main y la carpeta /(root). Guarda los cambios.
+5. Cuando GitHub Pages termine de publicar, abre la direccion que aparece en Settings > Pages. La tarjeta se encuentra en /tarjeta-digital.html.
+
+La pagina principal enlaza el CV, la foto de la tarjeta, el QR, el contacto vCard, los estilos y el JavaScript con rutas relativas.

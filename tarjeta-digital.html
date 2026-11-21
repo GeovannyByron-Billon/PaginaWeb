@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d2b">
+  <title>Byron Rivadeneira | Tarjeta digital</title>
+  <meta name="description" content="Tarjeta de contacto digital de Byron Rivadeneira, ingeniero civil, MBA y PMP®.">
+  <link rel="stylesheet" href="css/styles-v4.css">
+  <style>
+    .digital-page { min-height: 100vh; background: #101d2b; color: #152435; }
+    .digital-top { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 26px 0; display: flex; align-items: center; justify-content: space-between; color: white; }
+    .digital-logo { display: inline-flex; align-items: center; gap: 11px; font: 800 22px/.9 var(--display); letter-spacing: -.08em; }
+    .digital-logo span { color: var(--lime); }
+    .digital-logo small { display: block; margin-top: 5px; color: rgba(255,255,255,.56); font: 700 8px/1.3 var(--sans); letter-spacing: .13em; }
+    .digital-top a:last-child { color: rgba(255,255,255,.7); font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .digital-top a:last-child span { color: var(--lime); margin-left: 7px; }
+    .digital-shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto 50px; box-shadow: 0 35px 100px rgba(0,0,0,.32); }
+    .digital-cover { min-height: 245px; position: relative; overflow: hidden; display: flex; align-items: end; padding: 26px 42px; background: #22394b; color: white; }
+    .digital-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%; }
+    .digital-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,24,36,.77), rgba(12,24,36,.1)), linear-gradient(0deg, rgba(12,24,36,.54), transparent 65%); }
+    .digital-cover-copy { position: relative; z-index: 1; display: flex; align-items: end; justify-content: space-between; width: 100%; gap: 20px; }
+    .digital-cover-copy span { color: var(--lime); font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+    .digital-cover-copy b { color: rgba(255,255,255,.84); font-size: 9px; font-weight: 600; letter-spacing: .14em; }
+    .digital-content { display: grid; grid-template-columns: 1.15fr .85fr; background: #f6f7f4; border-left: 4px solid var(--lime); }
+    .digital-info { padding: 42px clamp(28px, 6vw, 72px) 36px; }
+    .digital-info .eyebrow { color: #5d8624; }
+    .digital-identity { display: flex; align-items: center; gap: 20px; }
+    .digital-portrait { display: block; width: 104px; height: 104px; flex: 0 0 auto; border: 4px solid white; border-radius: 50%; object-fit: cover; object-position: center; box-shadow: 0 8px 24px rgba(21,36,53,.16); }
+    .digital-info h1 { margin: 9px 0 6px; font: 700 clamp(34px, 4.5vw, 54px)/1.02 var(--display); letter-spacing: -.07em; }
+    .digital-role { margin: 0; color: #496477; font: 600 14px/1.55 var(--display); }
+    .digital-company { margin: 7px 0 0; color: #7a878d; font-size: 11px; }
+    .digital-summary { max-width: 530px; margin: 24px 0 0; color: #677680; font-size: 12px; line-height: 1.75; }
+    .digital-credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .digital-credentials span { padding: 7px 10px; border: 1px solid #d1dad8; color: #445e6d; font-size: 9px; font-weight: 700; }
+    .digital-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+    .digital-action { min-height: 41px; display: inline-flex; align-items: center; gap: 10px; padding: 0 13px; border: 1px solid #c5cfcd; color: #23394a; font-size: 10px; font-weight: 700; transition: background .2s, color .2s, border-color .2s; }
+    .digital-action:hover { border-color: #172838; background: #172838; color: white; }
+    .digital-action.primary { border-color: #172838; background: #172838; color: white; }
+    .digital-action.primary:hover { border-color: #5d8624; background: #5d8624; }
+    .digital-action .arrow { color: #739b35; font-size: 14px; }
+    .digital-links { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 22px; }
+    .digital-links a { color: #60727d; font-size: 10px; font-weight: 700; }
+    .digital-links a:hover { color: #5d8624; }
+    .digital-downloads { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 26px; padding-top: 19px; border-top: 1px solid #d6ddda; }
+    .digital-downloads a { color: #335369; font-size: 10px; font-weight: 700; }
+    .digital-downloads a span { margin-left: 7px; color: #5d8624; }
+    .digital-qr-panel { align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 34px 25px; background: #e9eeec; text-align: center; }
+    .digital-qr-link { display: block; width: min(300px, 68vw); height: min(300px, 68vw); max-width: 100%; flex: 0 0 auto; margin: 0 !important; padding: 0; line-height: 0; }
+    .digital-qr-link img { display: block; width: 100%; height: 100%; max-width: none; aspect-ratio: 1 / 1; object-fit: contain; padding: 8px; background: white; box-shadow: 0 12px 28px rgba(21,36,53,.12); image-rendering: pixelated; }
+    .digital-qr-panel .eyebrow { margin-top: 20px; color: #5d8624; font-size: 8px; }
+    .digital-qr-panel h2 { margin: 8px 0 5px; font: 700 18px var(--display); letter-spacing: -.035em; }
+    .digital-qr-panel p { max-width: 250px; margin: 0; color: #718089; font-size: 10px; line-height: 1.55; }
+    .digital-qr-panel a { margin-top: 13px; color: #315b78; font-size: 10px; font-weight: 700; }
+    .digital-quote { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 20px 30px; background: #172838; color: rgba(255,255,255,.78); }
+    .digital-quote p { margin: 0; font: 500 12px/1.55 var(--display); }
+    .digital-quote cite { flex: 0 0 auto; color: var(--lime); font-size: 8px; font-style: normal; font-weight: 700; letter-spacing: .1em; }
+    .digital-footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 0 0 26px; display: flex; justify-content: space-between; gap: 16px; color: rgba(255,255,255,.48); font-size: 9px; }
+    .digital-footer a { color: rgba(255,255,255,.73); }
+    @media (max-width: 720px) {
+      .digital-top, .digital-shell, .digital-footer { width: calc(100% - 28px); }
+      .digital-top { padding: 18px 0; }
+      .digital-cover { min-height: 176px; padding: 18px; }
+      .digital-content { grid-template-columns: 1fr; }
+      .digital-info { padding: 30px 22px; }
+      .digital-identity { gap: 14px; }
+      .digital-portrait { width: 82px; height: 82px; }
+      .digital-info h1 { font-size: clamp(31px, 8.3vw, 45px); }
+      .digital-role { font-size: 12px; }
+      .digital-summary { margin-top: 17px; font-size: 11px; }
+      .digital-qr-panel { padding: 28px 20px; }
+      .digital-qr-link { width: min(270px, 72vw); height: min(270px, 72vw); }
+      .digital-quote { align-items: start; flex-direction: column; gap: 9px; padding: 18px 22px; }
+      .digital-quote p { font-size: 11px; }
+      .digital-footer { flex-direction: column; padding-bottom: 18px; }
+    }
+    @media print {
+      .digital-page { background: white; }
+      .digital-top, .digital-footer { color: #60727d; }
+      .digital-top a:last-child { display: none; }
+      .digital-shell { margin: 0 auto; box-shadow: none; }
+      .digital-cover { min-height: 160px; print-color-adjust: exact; }
+      .digital-content, .digital-qr-panel, .digital-quote { print-color-adjust: exact; }
+      .digital-actions a, .digital-links a, .digital-downloads a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body class="digital-page">
+  <header class="digital-top">
+    <a class="digital-logo" href="index.html" aria-label="Byron Rivadeneira">
+      BR<span>.</span><span><small>BYRON RIVADENEIRA</small></span>
+    </a>
+    <a href="index.html">Sitio web <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="digital-shell">
+    <section class="digital-cover" aria-label="Imagen de arquitectura urbana">
+      <img src="assets/hero-2.jpg" alt="Torres corporativas que evocan proyectos urbanos e infraestructura" fetchpriority="high">
+      <div class="digital-cover-copy"><span>DIRECCIÓN EJECUTIVA · INGENIERÍA · DESARROLLO</span><b>ECUADOR / LATAM</b></div>
+    </section>
+    <section class="digital-content" aria-label="Tarjeta de presentación de Byron Rivadeneira">
+      <div class="digital-info">
+        <div class="digital-identity">
+          <img class="digital-portrait" src="assets/byron-contact-photo.jpg" alt="Fotografía de Byron Rivadeneira para su tarjeta de contacto" width="600" height="600">
+          <div><span class="eyebrow">CONTACTO PROFESIONAL</span><h1>Byron Rivadeneira</h1></div>
+        </div>
+        <p class="digital-role">Gerente General · Ingeniero Civil · MBA · PMP<sup>®</sup></p>
+        <p class="digital-company">Yehuda Levi Ecuador</p>
+        <p class="digital-summary">Desarrollo y gestión de proyectos de infraestructura. Experiencia en evaluación técnica y económica, administración y dirección de proyectos.</p>
+        <div class="digital-credentials" aria-label="Credenciales"><span>INGENIERO CIVIL</span><span>MBA</span><span>PMP<sup>®</sup></span></div>
+        <div class="digital-actions">
+          <a class="digital-action primary" href="https://wa.me/593983407997" target="_blank" rel="noopener">WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="digital-action" href="tel:+593983407997">Llamar <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="digital-action" href="mailto:geovannybyron@gmail.com">Correo <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="digital-links">
+          <a href="https://www.linkedin.com/in/byron-geovanny-rivadeneira-erazo-758b0278/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="index.html">Mi trayectoria ↗</a>
+        </div>
+        <div class="digital-downloads">
+          <a href="assets/byron-contact.vcf" download="Byron_Rivadeneira.vcf">Guardar contacto <span>↓</span></a>
+          <a href="01 CV BYRON RIVADENEIRA 2026.pdf" download="CV_Byron_Rivadeneira_2026.pdf">Descargar CV <span>↓</span></a>
+        </div>
+      </div>
+      <aside class="digital-qr-panel">
+        <a class="digital-qr-link" href="assets/byron-contact.vcf" download="Byron_Rivadeneira.vcf" aria-label="Descargar el contacto de Byron Rivadeneira con fotografía">
+          <img src="assets/byron-contact-vcard-qr.png" alt="Código QR cuadrado que guarda el contacto de Byron Rivadeneira con fotografía" width="1692" height="1692">
+        </a>
+        <span class="eyebrow">ESCANEA Y GUARDA</span>
+        <h2>Contacto con foto</h2>
+        <p>El código incluye la tarjeta de contacto y su fotografía.</p>
+        <a href="assets/byron-contact.vcf" download="Byron_Rivadeneira.vcf">Descargar archivo vCard ↓</a>
+      </aside>
+    </section>
+    <footer class="digital-quote">
+      <p>“No te corresponde terminar toda la obra; tampoco eres libre de abandonarla.”</p>
+      <cite><a href="https://www.sefaria.org/Pirkei_Avot.2.16?lang=bi" target="_blank" rel="noopener">PIRKEI AVOT 2:16 ↗</a></cite>
+    </footer>
+  </main>
+
+  <footer class="digital-footer"><span>Byron Rivadeneira · Ecuador</span><a href="index.html">Conoce mi trayectoria ↗</a></footer>
+</body>
+</html>
